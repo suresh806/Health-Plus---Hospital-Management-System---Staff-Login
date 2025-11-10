@@ -68,7 +68,7 @@ const DLogin = () => {
         
         if (!res) {
           setLoading(false);
-          notify("Connection error. Please try again.");
+          notify("Wrong credentials. Please try again.");
           return;
         }
 
@@ -107,7 +107,7 @@ const DLogin = () => {
           
           if (!res) {
             setLoading(false);
-            notify("Connection error. Please try again.");
+            notify("Wrong credentials. Please try again.");
             return;
           }
 
@@ -146,7 +146,7 @@ const DLogin = () => {
           
           if (!res) {
             setLoading(false);
-            notify("Connection error. Please try again.");
+            notify("Wrong credentials. Please try again.");
             return;
           }
 
@@ -204,7 +204,7 @@ const DLogin = () => {
 
       if (!res) {
         setforgetLoading(false);
-        return notify("Connection error. Please try again.");
+        return notify("Wrong credentials. Please try again.");
       }
 
       const message = res?.message;
