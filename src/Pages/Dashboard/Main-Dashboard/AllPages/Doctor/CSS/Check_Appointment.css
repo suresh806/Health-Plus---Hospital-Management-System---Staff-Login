@@ -1,0 +1,194 @@
+.patient-section {
+    padding: 20px;
+    background: #f8fafc;
+}
+
+/* Header Section */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.dashboard-subtitle {
+    color: #64748b;
+    margin: 8px 0 0 0;
+}
+
+/* Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    min-width: 300px;
+}
+
+.stat-card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon.blue {
+    background: #dbeafe;
+    color: #1a73e8;
+}
+
+.stat-icon.orange {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+/* Search Bar */
+.search-bar {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Table Styles */
+.patient-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .section-header {
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .patient-section {
+        padding: 16px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .dashboard-subtitle {
+        font-size: 14px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+
+    /* Make table scrollable horizontally */
+    .patient-table {
+        overflow-x: auto;
+    }
+
+    .ant-table-wrapper {
+        overflow-x: auto;
+    }
+
+    /* Adjust action buttons */
+    .ant-btn {
+        padding: 4px 8px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .patient-section {
+        padding: 12px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .dashboard-subtitle {
+        font-size: 13px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        min-width: auto;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .search-bar {
+        padding: 6px 12px;
+    }
+
+    /* Stack action buttons on mobile */
+    .ant-table-cell .ant-space {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .ant-btn {
+        width: 100%;
+    }
+
+    /* Make table more compact */
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+        padding: 8px 4px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+}

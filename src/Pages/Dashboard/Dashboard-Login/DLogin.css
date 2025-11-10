@@ -1,0 +1,689 @@
+.mainLoginPage {
+  min-height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+  padding: 1rem;
+}
+
+.leftside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(45deg, #1a73e8 0%, #0d47a1 100%);
+  border-radius: 30px 0 0 30px;
+  overflow: hidden;
+  color: white;
+}
+
+.leftside::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+  animation: rotate 30s linear infinite;
+}
+
+.hospital-icon {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 3rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-primary {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  color: white;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.icon-secondary {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+  animation: float 6s ease-in-out infinite;
+}
+
+.icon-accent {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  bottom: 30px;
+  left: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+  animation: float 4s ease-in-out infinite reverse;
+}
+
+.welcome-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+  max-width: 80%;
+  line-height: 1.2;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rightside {
+  flex: 1;
+  max-width: 550px;
+  padding: 3rem 4rem;
+  background: #ffffff;
+  border-radius: 0 30px 30px 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.rightside::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #e8f0fe, #f8faff);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  opacity: 0.8;
+}
+
+.rightside::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #f8faff, #e8f0fe);
+  border-radius: 50%;
+  bottom: -75px;
+  left: -75px;
+  opacity: 0.8;
+}
+
+.rightside h1 {
+  font-size: 2.25rem;
+  color: #1a73e8;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+}
+
+.rightside h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #1a73e8;
+  border-radius: 2px;
+}
+
+.radiogroup {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.radiobutton {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 0.75rem !important;
+  border-radius: 12px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  background: #fff !important;
+  color: #1a73e8 !important;
+  border: 2px solid #e8f0fe !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.radiobutton:first-child {
+  margin-left: 0;
+}
+
+.radiobutton:last-child {
+  margin-right: 0;
+}
+
+.radiobutton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.radiobutton:hover {
+  background: #e8f0fe !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.1);
+}
+
+.ant-radio-button-wrapper-checked {
+  background: #1a73e8 !important;
+  color: white !important;
+  border-color: #1a73e8 !important;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2) !important;
+}
+
+.Profileimg {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem;
+  position: relative;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.Profileimg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Profileimg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 8px 16px rgba(26, 115, 232, 0.15);
+}
+
+form {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+form h3 {
+  font-size: 1.1rem;
+  color: #2c5282;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+form h3 .icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  margin-right: 0.75rem;
+}
+
+form h3 svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #1a73e8;
+}
+
+form h3 .label-text {
+  letter-spacing: 0.01em;
+}
+
+.straight-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 6px;
+}
+
+.form-label {
+  color: #1a73e8;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 2px;
+}
+
+.input-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.input-with-icon {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.field-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  color: #1a73e8;
+  opacity: 0.6;
+}
+
+.form-input {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px 0 32px;
+  border: 1px solid #e8f0fe;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.input-group .input-field-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.rightside input {
+  width: 100%;
+  padding: 1rem 3rem 1rem 3.5rem;
+  border: 2px solid #e8f0fe;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.3s ease;
+  color: #1a73e8;
+  height: 3.25rem;
+}
+
+.rightside input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.1);
+}
+
+.rightside input:focus + .input-icon {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  color: #1a73e8;
+}
+
+.rightside input::placeholder {
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+.rightside input::placeholder {
+  color: #89a4c7;
+}
+
+.rightside input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.1);
+  outline: none;
+}
+
+.rightside input:focus + .input-icon {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.rightside button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #4285f4, #0d47a1);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.rightside button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.rightside button:hover::before {
+  left: 100%;
+}
+
+.rightside button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+}
+
+.rightside button:active {
+  transform: translateY(0);
+}
+
+.forget-password {
+  margin-top: 1.5rem;
+  color: #5f6368;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.forget-password span {
+  color: #1a73e8 !important;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.forget-password span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(to right, #4285f4, #34a853);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.forget-password span:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Drawer Styles */
+.drawer-content {
+  padding: 12px;
+}
+
+.drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a73e8;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.title-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.forgot-form-group {
+  margin-bottom: 12px;
+}
+
+.forgot-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1a73e8;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  margin-left: 2px;
+}
+
+.label-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.select-wrapper, .input-wrapper {
+  position: relative;
+}
+
+.forgot-select, .forgot-input {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px 0 32px;
+  border: 1px solid #e8f0fe;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  background: white;
+  appearance: none;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  color: #1a73e8;
+  opacity: 0.6;
+}
+
+.reset-button {
+  width: 100%;
+  height: 32px;
+  margin-top: 8px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  background: #1557b0;
+}
+
+.reset-button:disabled {
+  background: #89a4c7;
+  cursor: not-allowed;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+  .mainLoginPage {
+    padding: 1rem;
+  }
+  
+  .rightside {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainLoginPage {
+    flex-direction: column;
+  }
+
+  .leftside {
+    display: none;
+  }
+
+  .rightside {
+    max-width: 100%;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .rightside {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .rightside h1 {
+    font-size: 2rem;
+  }
+
+  .radiobutton {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .rightside {
+    padding: 1rem 0.75rem;
+  }
+
+  .rightside h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .radiogroup {
+    margin-bottom: 1.5rem;
+    gap: 4px;
+  }
+
+  .radiobutton {
+    padding: 6px 4px !important;
+    font-size: 0.7rem !important;
+    gap: 4px !important;
+    margin: 0 2px !important;
+    border-width: 1px !important;
+  }
+
+  .radiobutton svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .ant-radio-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ant-radio-button-wrapper {
+    height: auto !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Make text wrap in two lines if needed */
+  .radiobutton span {
+    white-space: normal;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+  }
+}
